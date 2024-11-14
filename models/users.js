@@ -1,4 +1,4 @@
-import mongoose from "/"
+import mongoose from "mongoose"
 const Schema = new mongoose.Schema({
     name:{
         type: String, 
@@ -16,7 +16,7 @@ const Schema = new mongoose.Schema({
         required : true,
         select : false,
     },
-    createddAt:{
+    createdAt:{
         type : Date,
         default:Date.now,
     },

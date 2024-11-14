@@ -1,9 +1,28 @@
-import express from express;
+import mongoose from "mongoose";
 
 const Schema = { 
-    "tilte" : {
-
+    title : { 
+        type : String , 
+        required : true ,
     },
-     "description" : "" ,
-     "iscompleted":
+    description : {
+        type : String , 
+        required :true,
+    },
+    isCompleted  : {
+        type: Boolean,
+        default : false,
+    },
+    user : { 
+        type: mongoose.Schema.Typed.objectId,
+        ref:"user",
+        required:true ,
+        
+    },
+    createdAt : {
+        type :Date , 
+        default :Date.now
+    }
+
  }
+ export const task =  mongoose.model("Task" , schema);
