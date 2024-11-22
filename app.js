@@ -6,7 +6,7 @@ import userRouter from "./routes/users.js";
 const app = express();
 
 app.use(express.json());
-app.use("/users", userRouter);
+app.use("/api/v1/users", userRouter);
 //app.use("/task", taskRouter);
 
 app.get("/", (req, res) => {

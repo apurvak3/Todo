@@ -32,7 +32,7 @@ export const register = async (req, res) => {
         const { name, email, password } = req.body;
         let user = await User.findOne({ email });
 
-        if (user) {
+        if (!user ||  !email || !password) {
             return res.status(404).json({
                 success: false,
                 message: "User already found",
